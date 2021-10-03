@@ -1,20 +1,23 @@
 /******************************************************************************
-RV-3028-C7.h
+@file Newt_RV_3028_C7.cpp
+
+Arduino library for RV_3028_CY RTC for use with Newt Smart Display by Phambili
+
+MIT license (see license.txt)
+
+Branched from 
 RV-3028-C7 Arduino Library
 Constantin Koch
-July 25, 2019
 https://github.com/constiko/RV-3028_C7-Arduino_Library
 
-Development environment specifics:
-Arduino IDE 1.8.9
 
-This code is released under the [MIT License](http://opensource.org/licenses/MIT).
-Please review the LICENSE.md file included with this example. If you have any questions
-or concerns with licensing, please contact constantinkoch@outlook.com.
-Distributed as-is; no warranty is given.
 ******************************************************************************/
 
-#include "RV-3028-C7.h"
+#ifndef _NEWT_RV_3028_C7_H
+#define _NEWT_RV_3028_C7_H
+
+
+#include "Newt_RV_3028_C7.h"
 
 //****************************************************************************//
 //
@@ -898,3 +901,4 @@ bool RV3028::readBit(uint8_t reg_addr, uint8_t bit_num)
 
 }
 
+#endif

@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${default}",
+                "${workspaceFolder}/**",
+                "C:\\Users\\Darian Johnson\\Documents\\Arduino\\hardware\\espressif\\arduino-esp32/**        ",
+                "C:\\Users\\Darian Johnson\\Documents\\Arduino\\libraries/**",
+                "C:\\Users\\Darian Johnson\\Documents\\Arduino\\libraries"
+            ],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu11",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "linux-gcc-x64",
+            "defines": [
+                "USBCON",
+                "ARDUINO=10813"
+            ]
+        }
+    ],
+    "version": 4
+}

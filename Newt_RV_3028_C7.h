@@ -1,30 +1,20 @@
 /******************************************************************************
-RV-3028-C7.h
+@file Newt_RV_3028_C7.h
+
+Arduino library for RV_3028_C7 RTC for use with Newt Smart Display by Phambili
+
+MIT license (see license.txt)
+
+Branched from 
 RV-3028-C7 Arduino Library
 Constantin Koch
-July 25, 2019
 https://github.com/constiko/RV-3028_C7-Arduino_Library
 
-Resources:
-Uses Wire.h for I2C operation
 
-Development environment specifics:
-Arduino IDE 1.8.9
-
-This code is released under the [MIT License](http://opensource.org/licenses/MIT).
-Please review the LICENSE.md file included with this example. If you have any questions
-or concerns with licensing, please contact constantinkoch@outlook.com.
-Distributed as-is; no warranty is given.
 ******************************************************************************/
 
-#pragma once
 
-#if (ARDUINO >= 100)
 #include "Arduino.h"
-#else
-#include "WProgram.h"
-#endif
-
 #include <Wire.h>
 
 
