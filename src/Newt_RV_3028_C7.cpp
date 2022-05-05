@@ -72,6 +72,7 @@ RV3028::RV3028(void)
 
 }
 
+/* try a new begin function
 bool RV3028::begin(TwoWire &wirePort, bool set_24Hour, bool disable_TrickleCharge, bool set_LevelSwitchingMode, bool reset_Status)
 {
 	//We require caller to begin their I2C port, with the speed of their choice
@@ -84,6 +85,27 @@ bool RV3028::begin(TwoWire &wirePort, bool set_24Hour, bool disable_TrickleCharg
 	if (disable_TrickleCharge) { disableTrickleCharge(); delay(1); }
 
 	return((set_LevelSwitchingMode ? setBackupSwitchoverMode(3) : true) && (reset_Status ? writeRegister(RV3028_STATUS, 0x00) : true));
+}*/
+
+bool RV3028::begin(bool init_Status, TwoWire &wirePort, bool set_24Hour, bool disable_TrickleCharge, bool set_LevelSwitchingMode, bool reset_Status)
+{
+	//We require caller to begin their I2C port, with the speed of their choice
+	//external to the library
+	//_i2cPort->begin();
+	_i2cPort = &wirePort;
+	
+	if (init_Status){
+
+		delay(1);
+		if (set_24Hour) { set24Hour(); delay(1); }
+		if (disable_TrickleCharge) { disableTrickleCharge(); delay(1); }
+
+		//return((set_LevelSwitchingMode ? setBackupSwitchoverMode(3) : true) && (reset_Status ? writeRegister(RV3028_STATUS, 0x00) : true));
+		return((set_LevelSwitchingMode ? setBackupSwitchoverMode(0) : true) && (reset_Status ? writeRegister(RV3028_STATUS, 0x00) : true));
+	
+	}
+	
+	return true;
 }
 
 bool RV3028::setTime(uint8_t sec, uint8_t min, uint8_t hour, uint8_t weekday, uint8_t date, uint8_t month, uint16_t year)
@@ -459,10 +481,10 @@ void RV3028::enableAlarmInterrupt(uint8_t min, uint8_t hour, uint8_t date_or_wee
 	enableAlarmInterrupt();
 
 	//Clock output?
-	if (enable_clock_output)
+	/*if (enable_clock_output)
 		setBit(RV3028_INT_MASK, IMT_MASK_CAIE);
 	else
-		clearBit(RV3028_INT_MASK, IMT_MASK_CAIE);
+		clearBit(RV3028_INT_MASK, IMT_MASK_CAIE);*/
 }
 
 void RV3028::enableAlarmInterrupt()
@@ -540,10 +562,10 @@ void RV3028::setTimer(bool timer_repeat, uint16_t timer_frequency, uint16_t time
 	writeRegister(RV3028_CTRL1, ctrl1_val);
 
 	//Clock output?
-	if (enable_clock_output)
+	/*if (enable_clock_output)
 		setBit(RV3028_INT_MASK, IMT_MASK_CTIE);
 	else
-		clearBit(RV3028_INT_MASK, IMT_MASK_CTIE);
+		clearBit(RV3028_INT_MASK, IMT_MASK_CTIE);*/
 }
 
 
@@ -597,10 +619,10 @@ void RV3028::enablePeriodicUpdateInterrupt(bool every_second, bool enable_clock_
 	setBit(RV3028_CTRL2, CTRL2_UIE);
 
 	//Clock output?
-	if (enable_clock_output)
+	/*if (enable_clock_output)
 		setBit(RV3028_INT_MASK, IMT_MASK_CUIE);
 	else
-		clearBit(RV3028_INT_MASK, IMT_MASK_CUIE);
+		clearBit(RV3028_INT_MASK, IMT_MASK_CUIE);*/
 }
 
 void RV3028::disablePeriodicUpdateInterrupt()
