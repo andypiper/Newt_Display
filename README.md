@@ -1,4 +1,4 @@
-Newt Display Arduino Library
+Newt Smart Display Arduino Library
 ========================================
 
 ![Newt](newt-angle-01_jpg_tile-xl.jpg)
