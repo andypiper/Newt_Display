@@ -1,7 +1,8 @@
 /******************************************************************************
 @file Newt_Display.h
 
-Arduino library for RV_3028_C7 RTC for use with Newt Smart Display by Phambili
+Arduino Library Newt_Display by Phambili
+https://github.com/Phambili-Tech/Newt_Display
 
 MIT license (see license.txt)
 

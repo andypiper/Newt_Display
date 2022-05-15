@@ -52,7 +52,7 @@ POSSIBILITY OF SUCH DAMAGE.
    https://github.com/me-no-dev/arduino-esp32fs-plugin */
 #define FORMAT_SPIFFS_IF_FAILED true
 
-#include <Newt_RV_3028_C7.h>
+#include <Newt_Display.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SharpMem.h>
 #include <time.h>
