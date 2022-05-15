@@ -1,5 +1,5 @@
 /******************************************************************************
-@file Newt_RV_3028_C7.h
+@file Newt_Display.h
 
 Arduino library for RV_3028_C7 RTC for use with Newt Smart Display by Phambili
 

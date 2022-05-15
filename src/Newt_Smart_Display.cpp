@@ -1,5 +1,5 @@
 /******************************************************************************
-@file Newt_RV_3028_C7.cpp
+@file Newt_Display.cpp
 
 Arduino library for RV_3028_CY RTC for use with Newt Smart Display by Phambili
 
@@ -13,11 +13,11 @@ https://github.com/constiko/RV-3028_C7-Arduino_Library
 
 ******************************************************************************/
 
-#ifndef _NEWT_RV_3028_C7_H
-#define _NEWT_RV_3028_C7_H
+#ifndef _NEWT_DISPLAY_H
+#define _NEWT_DISPLAY_H
 
 
-#include "Newt_RV_3028_C7.h"
+#include "Newt_Display.h"
 
 //****************************************************************************//
 //
