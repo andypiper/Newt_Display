@@ -1,11 +1,13 @@
-void renderSettingsDisplay(int msg = 0) {
+void renderSettingsDisplay(int msg = 0)
+{
 
   currentDisplay = SETTINGS;
 
   display.fillScreen(BGCOLOR);
   display.setTextColor(TEXTCOLOR);
 
-  if (msg == 1) {
+  if (msg == 1)
+  {
 
     display.setFont(&FreeSansBold12pt7b);
     display.getTextBounds("Clearing Habit Calendar....DONE", 0, 0, &xP, &yP, &w, &h);
@@ -19,7 +21,8 @@ void renderSettingsDisplay(int msg = 0) {
     delay(3000);
   }
 
-  if (msg == 2) {
+  if (msg == 2)
+  {
 
     display.setFont(&FreeSansBold12pt7b);
     display.getTextBounds("Clearing WIFI SETTINGS....DONE", 0, 0, &xP, &yP, &w, &h);
@@ -45,12 +48,10 @@ void renderSettingsDisplay(int msg = 0) {
     ESP.restart();
   }
 
-
   display.fillScreen(BGCOLOR);
   display.setTextColor(TEXTCOLOR);
   int startX = displayMarginW / 2;
   int startY = displayMarginH * 2 + 10;
-
 
   display.setCursor(startX, startY);
   display.setFont(&FreeSansBold12pt7b);
@@ -88,7 +89,7 @@ void renderSettingsDisplay(int msg = 0) {
 
   display.setFont(&FreeSansBold9pt7b);
   display.setCursor(startX, startY);
-  display.print("Lastest Version");
+  display.print("Latest Version");
   display.print(": ");
   display.setCursor(startX + tab, startY);
   display.setFont(&FreeSans9pt7b);
@@ -160,7 +161,8 @@ void renderSettingsDisplay(int msg = 0) {
   display.setCursor(BUTTON_D_PIN_X - (w / 2), BUTTON_CDEF_PIN_Y);
   display.print("WIFI");
 
-  if (versionUpdateAvailable) {
+  if (versionUpdateAvailable)
+  {
     display.getTextBounds("UPGRADE", 0, 0, &xP, &yP, &w, &h);
     display.setCursor(BUTTON_E_PIN_X - (w / 2), BUTTON_CDEF_PIN_Y);
     display.print("UPGRADE");
@@ -171,28 +173,28 @@ void renderSettingsDisplay(int msg = 0) {
   display.print("EXIT");
 
   display.refresh();
-
 }
 
-
-void handleSettingsDetails(int button) {
+void handleSettingsDetails(int button)
+{
 
   switch (button)
   {
-    case BUTTON_C :
-      renderSettingsDisplay(1);
-      break;
-    case BUTTON_D :
-      renderSettingsDisplay(2);
-      break;
-    case BUTTON_E :
-      if (versionUpdateAvailable) {
-        updateVersion();
-      }
-      break;
-    case BUTTON_F :
-      exitScreensRoutine();
-      break;
+  case BUTTON_C:
+    renderSettingsDisplay(1);
+    break;
+  case BUTTON_D:
+    renderSettingsDisplay(2);
+    break;
+  case BUTTON_E:
+    if (versionUpdateAvailable)
+    {
+      updateVersion();
+    }
+    break;
+  case BUTTON_F:
+    exitScreensRoutine();
+    break;
   }
   return;
 }

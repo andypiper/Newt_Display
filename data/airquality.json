@@ -1,0 +1,39 @@
+{
+  "current": {
+    "aqi": 45,
+    "icon": "G",
+    "desc": "Good"
+  },
+  "attributions": ["UK-AIR, air quality in...", "World Air Quality Inde..."],
+  "forecast": [{
+    "avg": 26,
+    "max": 36,
+    "min": 19,
+    "icon": "G",
+    "d": "THU"
+  }, {
+    "avg": 20,
+    "max": 26,
+    "min": 16,
+    "icon": "G",
+    "d": "FRI"
+  }, {
+    "avg": 31,
+    "max": 59,
+    "min": 16,
+    "icon": "G",
+    "d": "SAT"
+  }, {
+    "avg": 24,
+    "max": 29,
+    "min": 21,
+    "icon": "G",
+    "d": "SUN"
+  }, {
+    "avg": 25,
+    "max": 25,
+    "min": 22,
+    "icon": "G",
+    "d": "MON"
+  }]
+}

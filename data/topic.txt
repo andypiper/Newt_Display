@@ -1,0 +1,11 @@
+newt60nnnnnnnnnn/#
+
+Publish
+{
+  "deviceID": "iAmNotReal",
+  "userID": "N/A",
+  "request": "init"
+}
+on /newt_requests
+
+

@@ -1,0 +1,19 @@
+{
+  "deviceID": "newt60nnnnnnnnnn",
+  "location": {
+    "lat": 52.68,
+    "long": -1.83,
+    "city": "Lichfield",
+    "localityName": "Lichfield"
+  },
+  "timezone": "Europe/London",
+  "latest_ver_major": 1,
+  "latest_ver_minor": 0,
+  "latest_ver_patch": 1,
+  "mqtt_token": "XXXXXXXXXXXXXXXX",
+  "mqtt_user": "phambilitech",
+  "mqtt_server": "phambilitech.cloud.shiftr.io",
+  "mqtt_pub_topic": "/newt_requests",
+  "tz_info": "GMT0BST,M3.5.0/1,M10.5.0",
+  "units": "metric"
+}

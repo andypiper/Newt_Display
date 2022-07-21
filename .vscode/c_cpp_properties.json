@@ -4,10 +4,7 @@
             "name": "Win32",
             "includePath": [
                 "${default}",
-                "${workspaceFolder}/**",
-                "C:\\Users\\Darian Johnson\\Documents\\Arduino\\hardware\\espressif\\arduino-esp32/**        ",
-                "C:\\Users\\Darian Johnson\\Documents\\Arduino\\libraries/**",
-                "C:\\Users\\Darian Johnson\\Documents\\Arduino\\libraries"
+                "${workspaceFolder}/**"
             ],
             "compilerPath": "/usr/bin/gcc",
             "cStandard": "gnu11",
