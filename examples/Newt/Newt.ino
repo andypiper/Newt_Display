@@ -1,5 +1,5 @@
 /*
-NEWT 
+NEWT
 By Phambili
 https://phambili.tech
 Developed by Darian Johnson
@@ -45,7 +45,7 @@ POSSIBILITY OF SUCH DAMAGE.
 //#include "USB.h"
 #define SWVERSION_MAJOR 1
 #define SWVERSION_MINOR 0
-#define SWVERSION_PATCH 0
+#define SWVERSION_PATCH 99
 
 /* You only need to format SPIFFS the first time you run a
    test or else use the SPIFFS plugin to create a partition
@@ -692,6 +692,7 @@ void setup() {
 
     wm.setConfigPortalTimeout(60);
     wm.setAPCallback(configModeCallback);
+    wm.setHostname(uniqId);
 
     bool res;
     res = wm.autoConnect(uniqId);  // anonymous ap
@@ -711,7 +712,6 @@ void setup() {
     if (res) {
 
       if (WiFi.status() != WL_CONNECTED) {
-        WiFi.setHostname(uniqId);
         WiFi.begin();
       }
 

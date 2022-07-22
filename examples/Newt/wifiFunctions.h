@@ -222,7 +222,6 @@ void mqttLoop() {
 
     //do I need this if statement
     if (WiFi.status() != WL_CONNECTED) {
-      WiFi.setHostname(uniqId);
 
     WiFi.begin();
 
@@ -631,7 +630,7 @@ void execOTA() {
 
   upgradeSoftwareDisplay(3);
   if (client_upgrade.connect(UPGRADE_HOST, UPGRADE_PORT)) {
-    // Connection Succeed. Now fecthing the bin
+    // Connection Succeed. Now fetching the bin
     client_upgrade.print(String("GET ") + UPGRADE_PATH + " HTTP/1.1\r\n" +
                          "Host: " + UPGRADE_HOST + "\r\n" +
                          "Cache-Control: no-cache\r\n" +
