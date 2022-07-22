@@ -222,6 +222,7 @@ void mqttLoop() {
 
     //do I need this if statement
     if (WiFi.status() != WL_CONNECTED) {
+      WiFi.setHostname(uniqId);
 
     WiFi.begin();
 

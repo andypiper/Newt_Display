@@ -59,7 +59,7 @@ POSSIBILITY OF SUCH DAMAGE.
 #include <driver/rtc_io.h>
 #include <EEPROM.h>
 
-#include <WiFiManager.h>  // https://github.com/tzapu/WiFiManager 
+#include <WiFiManager.h>  // https://github.com/tzapu/WiFiManager
 #include <WiFi.h>
 #include <WiFiClientSecure.h>
 #include <Update.h>
@@ -521,7 +521,11 @@ void introScreen(int message = 0) {
       startY = startY + h + spacer;
       display.setCursor(displayWidth - (displayMarginW * 3 + w), startY);
       display.print("version: ");
-      display.print(SWVERSION_MAJOR); display.print("."); display.print(SWVERSION_MINOR); display.print("."); display.print(SWVERSION_PATCH);
+      display.print(SWVERSION_MAJOR);
+      display.print(".");
+      display.print(SWVERSION_MINOR);
+      display.print(".");
+      display.print(SWVERSION_PATCH);
       display.refresh();
 
       delay(1500);
@@ -643,7 +647,7 @@ void setup() {
     return;
   }
 
-  //ititalize EEPROM
+  //initialize EEPROM
   if (!EEPROM.begin(EEPROM_SIZE)) {
     Serial.println("Failed to initialise EEPROM");
     Serial.println("Restarting...");
@@ -697,7 +701,7 @@ void setup() {
       // ESP.restart();
     } else {
       //if you get here you have connected to the WiFi
-      Serial.println("We have connected.)");
+      Serial.println("We have connected.");
 
       if (!isWifiInited()) {
         noteWifiInited();
@@ -707,6 +711,7 @@ void setup() {
     if (res) {
 
       if (WiFi.status() != WL_CONNECTED) {
+        WiFi.setHostname(uniqId);
         WiFi.begin();
       }
 
@@ -740,7 +745,6 @@ void setup() {
   handleWakeupReason();
   /* Start task to read values by pads. */
   xTaskCreate(&touchpad_check_value, "touchpad_check_value", 2048, NULL, 5, NULL);
-
 }
 
 int timerDisplayCounter = 0;
@@ -912,9 +916,9 @@ void handleSleep() {
 
       struct tm timeinfo;
       int s_i;
-      if (!getLocalTime(&timeinfo))
-      {
-        while (!rtc.updateTime());
+      if (!getLocalTime(&timeinfo)) {
+        while (!rtc.updateTime())
+          ;
         s_i = rtc.getSeconds();
       } else {
         s_i = timeinfo.tm_sec;
@@ -926,7 +930,7 @@ void handleSleep() {
     }
   }
 
-  if ((timerEnabled && !timerActive && timerH < 1 && timerM < 2) || (usb_plugged_in) ){
+  if ((timerEnabled && !timerActive && timerH < 1 && timerM < 2) || (usb_plugged_in)) {
     Serial.println("light sleep");
     Serial.flush();
     esp_light_sleep_start();
@@ -937,9 +941,9 @@ void handleSleep() {
     Serial.flush();
     //setCpuFrequencyMhz(240); //set at highest speed for processing
 
-    Wire.end(); // shutdown/power off I2C hardware,
-    pinMode(SDA, INPUT); // needed because Wire.end() enables pullups, power Saving
-    pinMode(SCL, INPUT); // needed because Wire.end() enables pullups, power Saving
+    Wire.end();           // shutdown/power off I2C hardware,
+    pinMode(SDA, INPUT);  // needed because Wire.end() enables pullups, power Saving
+    pinMode(SCL, INPUT);  // needed because Wire.end() enables pullups, power Saving
     esp_deep_sleep_start();
   }
 }
