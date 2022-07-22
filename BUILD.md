@@ -6,3 +6,9 @@ Unable to update to 1.0.1 OTA (connection dropped)
 - Install Espressif 2.0.4 in boards manager
 - Install required libraries in libraries manger
 - Set board type to "ESP32S2 Native USB"
+
+--> Builds 1.0.0
+Unable to find WifiManager hotspot on start
+Trying different backlevel builds of WifiManager
+
+
